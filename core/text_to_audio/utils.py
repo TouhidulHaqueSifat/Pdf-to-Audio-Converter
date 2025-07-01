@@ -22,7 +22,7 @@ class ConvertToAudio:
     def __init__(self):
         self.engine = pyttsx3.init()
 
-    def convert_to_audio(self,text,filename = None):
+    def convert_to_audio(self,text,filename= None):
        self.engine.setProperty('rate',150)
        self.engine.setProperty('volume',1.0)
        voices = self.engine.getProperty('voice')
