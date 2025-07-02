@@ -4,7 +4,7 @@ from .models import *
 class PDFUploadSerializer(serializers.ModelSerializer):
     class Meta:
         model = PdfModel
-        fields = '__all__'
+        fields = ['title','pdf_file']
 
 class AudioConvertSerializer(serializers.ModelSerializer):
 
