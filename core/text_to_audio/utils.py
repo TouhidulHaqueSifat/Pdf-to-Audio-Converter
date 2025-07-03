@@ -2,7 +2,7 @@ from pypdf import PdfReader
 import pyttsx3
 
 class ExtarctText:
-
+    
     def extract_text_from_pdf(self, pdf_path,start_page,end_page):
         reader = PdfReader(pdf_path)
         text = ""
@@ -22,15 +22,13 @@ class ConvertToAudio:
     def __init__(self):
         self.engine = pyttsx3.init()
 
-    def convert_to_audio(self,text,filename= None):
+    def convert_to_audio(self,text,filename):
        self.engine.setProperty('rate',150)
        self.engine.setProperty('volume',1.0)
        voices = self.engine.getProperty('voice')
-       #self.engine.save_to_file(text,filename)
+       self.engine.save_to_file(text,filename)
        print(voices)
-       self.engine.say(text)
+       #self.engine.say(text)
        self.engine.runAndWait()
 
-t1 = ConvertToAudio()
-t1.convert_to_audio(''' purpose of this book is to give you a thorough introduction to competitive
-                            programming.''')
+
